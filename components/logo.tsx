@@ -14,7 +14,7 @@ export function Logo({ showWordmark = true, inverted = false }: LogoProps) {
 
   return (
     <div className="flex items-center gap-3">
-      <svg viewBox="0 0 760 150" aria-hidden="true" className="h-11 w-auto shrink-0" role="img">
+      <svg viewBox="0 0 1060 150" aria-hidden="true" className="h-11 w-auto shrink-0" role="img">
         <g transform="translate(10 18)">
           <path
             d="M18 22H102V38H76V102C76 116 65 128 48 128C35 128 23 122 12 110L24 97C31 105 39 109 46 109C56 109 61 103 61 94V38H18V22Z"
@@ -44,7 +44,7 @@ export function Logo({ showWordmark = true, inverted = false }: LogoProps) {
               y="52"
               fill={wordmarkColor}
               fontFamily="Arial, Helvetica, sans-serif"
-              fontSize="44"
+              fontSize="36"
               fontWeight="800"
               letterSpacing="1"
             >

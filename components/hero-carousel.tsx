@@ -32,9 +32,9 @@ export function HeroCarousel() {
   const titles = [t.hero.slide1Title, t.hero.slide2Title, t.hero.slide3Title]
   const subs = [t.hero.slide1Sub, t.hero.slide2Sub, t.hero.slide3Sub]
   const highlights = [
-    { icon: CircleCheckBig, label: "UAE / KSA / Qatar" },
-    { icon: PackageCheck, label: "Private Label Ready" },
-    { icon: ShieldCheck, label: "Sourcing + Logistics" },
+    { icon: CircleCheckBig, label: t.ui.highlightMarkets },
+    { icon: PackageCheck, label: t.ui.highlightPrivateLabel },
+    { icon: ShieldCheck, label: t.ui.highlightSourcing },
   ]
 
   const next = useCallback(() => {
@@ -73,7 +73,7 @@ export function HeroCarousel() {
           <div className="grid items-end gap-10 pt-20 lg:grid-cols-[minmax(0,1.2fr)_380px]">
             <div className="max-w-3xl">
               <div className="mb-5 inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.24em] text-white/90 backdrop-blur-sm">
-                Middle East sourcing, export, and distribution
+                {t.ui.middleEastSourcing}
               </div>
 
               <h1
@@ -131,22 +131,22 @@ export function HeroCarousel() {
             <div className="animate-in fade-in slide-in-from-bottom-4 hidden lg:block" style={{ animationDuration: "700ms", animationDelay: "380ms", animationFillMode: "backwards" }}>
               <div className="rounded-[28px] border border-white/15 bg-white/10 p-6 text-white shadow-2xl backdrop-blur-md">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-gold">
-                  Regional Focus
+                  {t.ui.regionalFocus}
                 </p>
                 <h3 className="mb-5 text-2xl font-semibold leading-tight">
-                  Trade execution built for premium Middle East retail and wholesale channels.
+                  {t.ui.tradeExecution}
                 </h3>
                 <div className="space-y-4 border-t border-white/10 pt-5 text-sm text-white/80">
                   <div className="flex items-center justify-between gap-4">
-                    <span>Primary Hub</span>
-                    <span className="font-semibold text-white">Dubai, UAE</span>
+                    <span>{t.ui.primaryHub}</span>
+                    <span className="font-semibold text-white">{t.ui.dubaiUae}</span>
                   </div>
                   <div className="flex items-center justify-between gap-4">
-                    <span>Programs</span>
-                    <span className="font-semibold text-white">FCL / LCL / Mixed Loads</span>
+                    <span>{t.ui.programs}</span>
+                    <span className="font-semibold text-white">{t.ui.fclLcl}</span>
                   </div>
                   <div className="flex items-center justify-between gap-4">
-                    <span>Contact</span>
+                    <span>{t.ui.contact}</span>
                     <span className="font-semibold text-white">{siteConfig.contact.phone}</span>
                   </div>
                 </div>

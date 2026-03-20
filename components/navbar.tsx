@@ -74,6 +74,18 @@ export function Navbar() {
         {/* Right side: Language toggle + Mobile menu */}
         <div className="flex items-center gap-2">
           <Button
+            asChild
+            size="sm"
+            className={`hidden rounded-full px-4 text-xs font-semibold md:inline-flex ${
+              scrolled || !isHome
+                ? "bg-gold text-navy hover:bg-gold/90"
+                : "bg-gold text-navy shadow-lg hover:bg-gold/90"
+            }`}
+          >
+            <Link href="/request">{t.nav.businessMatchmaking}</Link>
+          </Button>
+
+          <Button
             variant="ghost"
             size="sm"
             onClick={toggleLanguage}
@@ -84,7 +96,7 @@ export function Navbar() {
             }`}
           >
             <Globe className="h-4 w-4" />
-            {language === "en" ? "ES" : "EN"}
+            {language === "en" ? "AR" : "EN"}
           </Button>
 
           {/* Mobile menu */}
@@ -104,6 +116,13 @@ export function Navbar() {
             <SheetContent side="right" className="w-72 border-l border-border bg-card">
               <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
               <div className="flex flex-col gap-1 pt-8">
+                <Link
+                  href="/request"
+                  onClick={() => setOpen(false)}
+                  className="mb-3 rounded-full bg-gold px-4 py-3 text-center text-sm font-semibold text-navy transition-colors hover:bg-gold/90"
+                >
+                  {t.nav.businessMatchmaking}
+                </Link>
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}

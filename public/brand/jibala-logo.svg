@@ -1,4 +1,4 @@
-<svg width="760" height="150" viewBox="0 0 760 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="1060" height="150" viewBox="0 0 1060 150" fill="none" xmlns="http://www.w3.org/2000/svg">
   <g transform="translate(10 18)">
     <path
       d="M18 22H102V38H76V102C76 116 65 128 48 128C35 128 23 122 12 110L24 97C31 105 39 109 46 109C56 109 61 103 61 94V38H18V22Z"
@@ -26,11 +26,11 @@
       y="52"
       fill="#123F49"
       font-family="Arial, Helvetica, sans-serif"
-      font-size="44"
+      font-size="36"
       font-weight="800"
       letter-spacing="1"
     >
-      JIBALA TRADING
+      JIBAL AMERICAS TRADING
     </text>
     <path d="M0 88c88 7 171 5 257 0 77-4 151-4 229 0" stroke="#0F8A5F" stroke-width="6" fill="none" stroke-linecap="round"/>
     <path d="M0 98c96 7 185 5 275 0 76-4 148-4 223 0" stroke="#123F66" stroke-width="5" fill="none" stroke-linecap="round"/>

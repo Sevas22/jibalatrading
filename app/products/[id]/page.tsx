@@ -32,7 +32,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
   if (!product) {
     return (
       <div className="flex min-h-screen items-center justify-center pt-20">
-        <p className="text-lg text-muted-foreground">Product not found.</p>
+        <p className="text-lg text-muted-foreground">{t.ui.productNotFound}</p>
       </div>
     )
   }

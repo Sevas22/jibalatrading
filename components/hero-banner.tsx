@@ -2,6 +2,7 @@
 
 import { ArrowRight, ShieldCheck, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useLanguage } from "@/contexts/language-context"
 
 interface HeroBannerProps {
   title: string
@@ -10,6 +11,8 @@ interface HeroBannerProps {
 }
 
 export function HeroBanner({ title, subtitle, image }: HeroBannerProps) {
+  const { t } = useLanguage()
+
   return (
     <section className="relative flex min-h-[430px] items-center overflow-hidden pb-12 pt-28">
       {image ? (
@@ -32,7 +35,7 @@ export function HeroBanner({ title, subtitle, image }: HeroBannerProps) {
         <div className="grid items-end gap-10 lg:grid-cols-[minmax(0,1.15fr)_340px]">
           <div className="max-w-3xl">
             <div className="mb-5 inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.24em] text-white/90 backdrop-blur-sm">
-              Jibala Trading
+              Jibal Americas Trading
             </div>
             <h1 className="mb-4 text-balance text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
               {title}
@@ -43,11 +46,11 @@ export function HeroBanner({ title, subtitle, image }: HeroBannerProps) {
             <div className="mt-6 flex flex-wrap gap-3 text-sm text-white/85">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 backdrop-blur-sm">
                 <ShieldCheck className="h-4 w-4 text-gold" />
-                Export-ready presentation
+                {t.ui.exportReadyPresentation}
               </div>
               <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 backdrop-blur-sm">
                 <Sparkles className="h-4 w-4 text-gold" />
-                Premium Middle East positioning
+                {t.ui.premiumMiddleEastPositioning}
               </div>
             </div>
           </div>
@@ -55,19 +58,19 @@ export function HeroBanner({ title, subtitle, image }: HeroBannerProps) {
           <div className="hidden lg:block">
             <div className="rounded-[28px] border border-white/15 bg-white/10 p-6 text-white shadow-2xl backdrop-blur-md">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-gold">
-                Regional profile
+                {t.ui.regionalProfile}
               </p>
               <h3 className="mb-4 text-2xl font-semibold leading-tight">
-                Catalogs and programs prepared for GCC retail, wholesale, and hospitality channels.
+                {t.ui.catalogsPrepared}
               </h3>
               <div className="space-y-3 border-t border-white/10 pt-4 text-sm text-white/80">
                 <div className="flex items-center justify-between gap-4">
-                  <span>Focus</span>
-                  <span className="font-semibold text-white">Quality + logistics</span>
+                  <span>{t.ui.focus}</span>
+                  <span className="font-semibold text-white">{t.ui.focusValue}</span>
                 </div>
                 <div className="flex items-center justify-between gap-4">
-                  <span>Programs</span>
-                  <span className="font-semibold text-white">Private label / mixed loads</span>
+                  <span>{t.ui.programs}</span>
+                  <span className="font-semibold text-white">{t.ui.programsValue}</span>
                 </div>
               </div>
               <Button
@@ -76,7 +79,7 @@ export function HeroBanner({ title, subtitle, image }: HeroBannerProps) {
                 className="mt-5 w-full bg-gold text-navy hover:bg-gold/90"
               >
                 <a href="/request">
-                  Request proposal
+                  {t.ui.rfqShort}
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>

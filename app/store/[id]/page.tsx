@@ -33,7 +33,7 @@ export default function StoreProductDetailPage({ params }: { params: Promise<{ i
   if (!product) {
     return (
       <div className="flex min-h-screen items-center justify-center pt-20">
-        <p className="text-lg text-muted-foreground">Product not found.</p>
+        <p className="text-lg text-muted-foreground">{t.ui.productNotFound}</p>
       </div>
     )
   }
@@ -106,7 +106,7 @@ export default function StoreProductDetailPage({ params }: { params: Promise<{ i
                   <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
                     {t.storePage.price}
                   </span>
-                  <p className="font-medium text-foreground">${product.price.toFixed(2)} per unit</p>
+                  <p className="font-medium text-foreground">${product.price.toFixed(2)} {t.ui.perUnit}</p>
                 </div>
               </div>
             </div>
@@ -114,7 +114,7 @@ export default function StoreProductDetailPage({ params }: { params: Promise<{ i
             {/* Quantity selector */}
             <div className="mb-6">
               <label className="mb-2 block text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                Quantity
+                {t.ui.quantity}
               </label>
               <div className="flex items-center gap-3">
                 <Button
@@ -135,7 +135,7 @@ export default function StoreProductDetailPage({ params }: { params: Promise<{ i
                   <Plus className="h-4 w-4" />
                 </Button>
                 <span className="ml-4 text-lg font-semibold text-primary">
-                  Total: ${(product.price * quantity).toFixed(2)}
+                  {t.ui.total}: ${(product.price * quantity).toFixed(2)}
                 </span>
               </div>
             </div>

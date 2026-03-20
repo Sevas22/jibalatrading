@@ -50,14 +50,14 @@ export default function ProductsPage() {
             <div className="mb-5 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary">
-                  Export catalog filters
+                  {t.ui.exportCatalogFilters}
                 </p>
                 <h2 className="mt-2 text-2xl font-semibold text-foreground">
-                  Find the right category for your market.
+                  {t.ui.findCategory}
                 </h2>
               </div>
               <div className="rounded-full border border-gold/30 bg-gold/10 px-4 py-2 text-sm font-medium text-primary">
-                {filtered.length} products available
+                {filtered.length} {t.ui.productsAvailable}
               </div>
             </div>
 
@@ -153,7 +153,7 @@ export default function ProductsPage() {
 
           {filtered.length === 0 && (
             <div className="py-20 text-center">
-              <p className="text-lg text-muted-foreground">No products found matching your criteria.</p>
+              <p className="text-lg text-muted-foreground">{t.ui.noProductsFound}</p>
             </div>
           )}
         </div>

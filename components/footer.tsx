@@ -1,8 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { MapPin, Phone, Mail, Send } from "lucide-react"
-import { Input } from "@/components/ui/input"
+import { MapPin, Phone, Mail, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/contexts/language-context"
 import { Logo } from "@/components/logo"
@@ -24,7 +23,7 @@ export function Footer() {
               {t.footer.description}
             </p>
             <div className="inline-flex w-fit rounded-full border border-white/15 bg-white/8 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.25em] text-gold">
-              GCC Trade Desk
+              {t.ui.tradeHub}
             </div>
           </div>
 
@@ -49,6 +48,13 @@ export function Footer() {
                 </Link>
               ))}
             </div>
+            <Button
+              asChild
+              size="sm"
+              className="mt-2 w-fit rounded-full bg-gold px-4 text-xs font-semibold text-navy hover:bg-gold/90"
+            >
+              <Link href="/request">{t.footer.sellers}</Link>
+            </Button>
           </div>
 
           {/* Contact Info */}
@@ -60,46 +66,57 @@ export function Footer() {
               <div className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                 <div className="text-sm text-white/70">
-                  <p>{siteConfig.contact.addressLine1}</p>
-                  <p>{siteConfig.contact.addressLine2}</p>
+                  <p>{t.footer.address}</p>
+                  <p>{t.footer.city}</p>
                 </div>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 shrink-0 text-gold" />
-                <span className="text-sm text-white/70">{siteConfig.contact.phone}</span>
+                <span className="text-sm text-white/70">{t.footer.phone}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 shrink-0 text-gold" />
-                <span className="text-sm text-white/70">{siteConfig.contact.email}</span>
+                <span className="text-sm text-white/70">{t.footer.email}</span>
               </div>
             </div>
           </div>
 
-          {/* Newsletter */}
+          {/* Sellers CTA */}
           <div className="flex flex-col gap-4">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-gold">
-              {t.footer.newsletter}
+              {t.footer.sellersInfoTitle}
             </h3>
-            <p className="text-sm text-white/70">{t.footer.newsletterDesc}</p>
-            <div className="flex gap-2">
-              <Input
-                placeholder={t.footer.emailPlaceholder}
-                className="border-white/20 bg-white/10 text-white placeholder:text-white/40"
-              />
-              <Button size="icon" className="shrink-0 bg-gold text-navy hover:bg-gold/90">
-                <Send className="h-4 w-4" />
+            <p className="text-sm text-white/70">{t.footer.sellersInfoDesc}</p>
+            <div className="rounded-2xl border border-gold/30 bg-white/5 p-4">
+              <p className="text-xs uppercase tracking-[0.2em] text-gold/90">{t.footer.sellers}</p>
+              <p className="mt-2 text-sm text-white/75">{t.footer.sellersCardText}</p>
+              <Button
+                asChild
+                className="mt-4 w-full rounded-xl bg-gold text-sm font-semibold text-navy shadow-lg shadow-gold/20 hover:bg-gold/90"
+              >
+                <Link href="/request">
+                  {t.footer.sellersButton}
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
               </Button>
             </div>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 md:flex-row">
-          <p className="text-sm text-white/50">
-            &copy; {new Date().getFullYear()} {siteConfig.name}. {t.footer.rights}
-          </p>
-          <div className="flex gap-4">
-            <span className="text-sm text-white/50">{siteConfig.contact.email}</span>
+        <div className="mt-12 flex flex-col items-center justify-center gap-2 border-t border-white/10 pt-8 text-center">
+          <div className="text-center">
+            <p className="text-sm text-white/50">
+              &copy; {new Date().getFullYear()} {siteConfig.name}. {t.footer.rights}
+            </p>
+            <a
+              href="https://www.codifikai.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-1 inline-block text-sm text-white/60 transition-colors hover:text-gold"
+            >
+              {t.footer.developedBy} codifikai.com
+            </a>
           </div>
         </div>
       </div>

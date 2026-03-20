@@ -125,7 +125,7 @@ function RequestPageContent() {
           <Card className="rounded-[28px] border border-border/70 bg-card/95 shadow-xl">
             <CardHeader className="pb-2">
               <div className="mb-3 inline-flex w-fit rounded-full border border-primary/10 bg-primary/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
-                Business inquiry
+                {t.ui.businessInquiry}
               </div>
               <CardTitle className="text-2xl text-foreground">{t.requestPage.title}</CardTitle>
               <CardDescription className="text-muted-foreground">

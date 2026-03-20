@@ -19,6 +19,13 @@ export default function StorePage() {
   const [categories, setCategories] = useState<string[]>([])
   const [selectedCategory, setSelectedCategory] = useState("all")
   const [search, setSearch] = useState("")
+  const origins = [
+    { name: "Colombia", flagUrl: "https://flagcdn.com/w40/co.png" },
+    { name: "Chile", flagUrl: "https://flagcdn.com/w40/cl.png" },
+    { name: "Peru", flagUrl: "https://flagcdn.com/w40/pe.png" },
+    { name: "Ecuador", flagUrl: "https://flagcdn.com/w40/ec.png" },
+    { name: "Brasil", flagUrl: "https://flagcdn.com/w40/br.png" },
+  ]
 
   useEffect(() => {
     setProducts(getProducts("store"))
@@ -46,18 +53,40 @@ export default function StorePage() {
 
       <section className="bg-background py-16">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <div className="mb-8 rounded-[24px] border border-primary/10 bg-card/90 p-5 shadow-sm">
+            <div className="mb-4 flex flex-col gap-1">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary">{t.ui.origin}</p>
+              <h3 className="text-lg font-semibold text-foreground">{t.ui.supplyCountries}</h3>
+            </div>
+            <div className="grid grid-cols-2 gap-3 md:grid-cols-5">
+              {origins.map((origin) => (
+                <div
+                  key={origin.name}
+                  className="flex items-center gap-2 rounded-xl border border-border/70 bg-background px-3 py-2"
+                >
+                  <img
+                    src={origin.flagUrl}
+                      alt={`${t.ui.origin}: ${origin.name}`}
+                    className="h-4 w-6 rounded-[2px] object-cover shadow-sm"
+                  />
+                  <span className="text-sm font-medium text-foreground">{origin.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <div className="mb-10 rounded-[28px] border border-border/70 bg-card/85 p-5 shadow-sm backdrop-blur md:p-6">
             <div className="mb-5 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary">
-                  Featured trade collection
+                  {t.ui.featuredTradeCollection}
                 </p>
                 <h2 className="mt-2 text-2xl font-semibold text-foreground">
-                  Explore curated offers ready for inquiry.
+                  {t.ui.exploreCuratedOffers}
                 </h2>
               </div>
               <div className="rounded-full border border-gold/30 bg-gold/10 px-4 py-2 text-sm font-medium text-primary">
-                {filtered.length} featured items
+                {filtered.length} {t.ui.featuredItems}
               </div>
             </div>
 
@@ -162,7 +191,7 @@ export default function StorePage() {
 
           {filtered.length === 0 && (
             <div className="py-20 text-center">
-              <p className="text-lg text-muted-foreground">No products found matching your criteria.</p>
+              <p className="text-lg text-muted-foreground">{t.ui.noProductsFound}</p>
             </div>
           )}
         </div>

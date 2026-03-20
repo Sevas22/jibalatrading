@@ -58,7 +58,7 @@ export function ValuesSection() {
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="mb-12 flex flex-col items-center text-center">
           <div className="mb-4 inline-flex rounded-full border border-primary/10 bg-primary/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
-            Core strengths
+            {t.ui.coreStrengths}
           </div>
           <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground md:text-4xl">
             {t.values.title}
@@ -96,9 +96,9 @@ export function AboutSection() {
   ]
 
   const pillars = [
-    "Premium retail packaging",
-    "Mixed container planning",
-    "Regional buyer alignment",
+    t.ui.premiumRetailPackaging,
+    t.ui.mixedContainerPlanning,
+    t.ui.regionalBuyerAlignment,
   ]
 
   return (
@@ -115,15 +115,15 @@ export function AboutSection() {
               />
             </div>
             <div className="absolute -bottom-5 -right-5 rounded-3xl border border-primary/10 bg-card/90 p-5 shadow-xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-primary">Trade Hub</p>
-              <p className="mt-2 text-lg font-semibold text-foreground">Dubai, UAE</p>
-              <p className="mt-1 text-sm text-muted-foreground">Premium sourcing and distribution coordination.</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-primary">{t.ui.tradeHub}</p>
+              <p className="mt-2 text-lg font-semibold text-foreground">{t.ui.dubaiUae}</p>
+              <p className="mt-1 text-sm text-muted-foreground">{t.ui.sourcingDistribution}</p>
             </div>
           </div>
 
           <div className="w-full lg:w-1/2">
             <div className="mb-4 inline-flex rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
-              Brand profile
+              {t.ui.brandProfile}
             </div>
             <h2 className="mb-2 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
               {t.about.title}
@@ -182,7 +182,7 @@ export function CategoriesSection() {
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="relative mb-12 text-center">
           <div className="mx-auto mb-4 inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.24em] text-gold">
-            Product lines
+            {t.ui.productLines}
           </div>
           <h2 className="mb-3 text-balance text-3xl font-bold tracking-tight text-white md:text-4xl">
             {t.categories.title}
@@ -224,7 +224,7 @@ export function WhyChooseSection() {
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="relative mb-12 text-center">
           <div className="mx-auto mb-4 inline-flex rounded-full border border-primary/10 bg-primary/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
-            Why Jibala
+            {t.ui.whyJibal}
           </div>
           <h2 className="mb-3 text-balance text-3xl font-bold tracking-tight text-foreground md:text-4xl">
             {t.whyChoose.title}
@@ -271,7 +271,7 @@ export function CountriesSection() {
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="mb-12 text-center">
           <div className="mx-auto mb-4 inline-flex rounded-full border border-white/15 bg-white/8 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.24em] text-white/90">
-            Focus markets
+            {t.ui.focusMarkets}
           </div>
           <h2 className="mb-3 text-balance text-3xl font-bold tracking-tight text-white md:text-4xl">
             {t.countries.title}

@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, useContext, useState, useCallback, type ReactNode } from "react"
+import { createContext, useContext, useState, useCallback, useEffect, type ReactNode } from "react"
 import { translations, type TranslationKey } from "@/lib/translations"
 import type { Language } from "@/lib/types"
 
@@ -17,10 +17,16 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>("en")
 
   const toggleLanguage = useCallback(() => {
-    setLanguage((prev) => (prev === "en" ? "es" : "en"))
+    setLanguage((prev) => (prev === "en" ? "ar" : "en"))
   }, [])
 
   const t = translations[language]
+
+  useEffect(() => {
+    document.documentElement.lang = language
+    // Keep layout direction stable and only switch copy language.
+    document.documentElement.dir = "ltr"
+  }, [language])
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t, toggleLanguage }}>
